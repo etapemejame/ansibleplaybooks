@@ -1,0 +1,15 @@
+---
+# Start an EC2 instance with a public IP address.
+
+- ec2_instance:
+    name: "Public-compute-instance"
+    key_name: cloudformkey
+    vpc_subnet_id: subnet-0bd8717dc058a8840
+    instance_type: t2.micro
+    security_group: default
+    network:
+      assign_public_ip: true
+    image_id: ami-02b5d851009884e20
+    Tags:
+      Environment: Testing
+      Name: Tower Test      
